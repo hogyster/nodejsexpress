@@ -4,6 +4,9 @@ const express = require('express')
 const app = express()
 const mysql = require('mysql')
 
+// app serve all the files inside public directory 
+app.use(express.static('./public'))
+
 app.get("/user/:id", (req, res) => {
     console.log("Fetching user with id: " + req.params.id)
 
@@ -19,12 +22,18 @@ app.get("/user/:id", (req, res) => {
         if (err) {
             console.log("failled to query for users" + err)
             res.sendStatus(500)
-            throw err
+            return
+            // throw err
         }
-        console.log("I think we fetched users successfully")
+        // console.log("I think we fetched users successfully")
+
+        // const users = rows.map((row) => {
+        //     return {firstName: row.first_name}
+        // })
+        // res.json(users)
         res.json(rows)
+
     })
-    // res.end()
 })
 
 app.get("/", (req, res) => {
