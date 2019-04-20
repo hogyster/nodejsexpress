@@ -16,6 +16,11 @@ app.get("/user/:id", (req, res) => {
     const userId = req.params.id
     const queryString = "SELECT * FROM users WHERE id = ?"
     connection.query(queryString, [userId], (err, rows, fields)=> {
+        if (err) {
+            console.log("failled to query for users" + err)
+            res.end()
+            return
+        }
         console.log("I think we fetched users successfully")
         res.json(rows)
     })
