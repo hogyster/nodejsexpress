@@ -18,8 +18,8 @@ app.get("/user/:id", (req, res) => {
     connection.query(queryString, [userId], (err, rows, fields)=> {
         if (err) {
             console.log("failled to query for users" + err)
-            res.end()
-            return
+            res.sendStatus(500)
+            throw err
         }
         console.log("I think we fetched users successfully")
         res.json(rows)
