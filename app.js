@@ -3,10 +3,16 @@
 const express = require('express')
 const app = express()
 const mysql = require('mysql')
+const morgan = require('morgan')
 
 // app serve all the files inside public directory 
 app.use(express.static('./public'))
+app.use(morgan('short'))
 
+app.get('/user_create', (req, res) => {
+    console.log("Trying to create new user...")
+    res.end()
+})
 app.get("/user/:id", (req, res) => {
     console.log("Fetching user with id: " + req.params.id)
 

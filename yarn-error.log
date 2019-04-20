@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.15.2/libexec/bin/yarn.js add mysql
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.15.2/libexec/bin/yarn.js add morgan
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/ImageMagick/bin
@@ -24,6 +24,7 @@ npm manifest:
     "license": "MIT",
     "dependencies": {
       "express": "^4.16.4",
+      "mysql": "^2.17.0",
       "nodemon": "^1.18.11"
     }
   }
@@ -151,6 +152,11 @@ Lockfile:
       isobject "^3.0.1"
       mixin-deep "^1.2.0"
       pascalcase "^0.1.1"
+  
+  bignumber.js@6.0.0:
+    version "6.0.0"
+    resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-6.0.0.tgz#bbfa047644609a5af093e9cbd83b0461fa3f6002"
+    integrity sha512-x247jIuy60/+FtMRvscqfxtVHQf8AGx2hm9c6btkgC0x/hp9yt+teISNhvF8WlwRkCc5yF2fDECH8SIMe8j+GA==
   
   binary-extensions@^1.0.0:
     version "1.13.1"
@@ -1205,6 +1211,16 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
     integrity sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
   
+  mysql@^2.17.0:
+    version "2.17.0"
+    resolved "https://registry.yarnpkg.com/mysql/-/mysql-2.17.0.tgz#f1e053eb6ec5ac5d521e63594c4405aaac43af96"
+    integrity sha512-BtsxHlxm5r0zJsM04NIq+vvn5YKMkq1AL9OMEu4kzeuOszYU6GC8ppQ8Yi7g7q3rHYgVS8otkMI7zToTPYvaKA==
+    dependencies:
+      bignumber.js "6.0.0"
+      readable-stream "2.3.6"
+      safe-buffer "5.1.2"
+      sqlstring "2.3.1"
+  
   nan@^2.12.1:
     version "2.13.2"
     resolved "https://registry.yarnpkg.com/nan/-/nan-2.13.2.tgz#f51dc7ae66ba7d5d55e1e6d4d8092e802c9aefe7"
@@ -1513,7 +1529,7 @@ Lockfile:
       minimist "^1.2.0"
       strip-json-comments "~2.0.1"
   
-  readable-stream@^2.0.2, readable-stream@^2.0.6:
+  readable-stream@2.3.6, readable-stream@^2.0.2, readable-stream@^2.0.6:
     version "2.3.6"
     resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
     integrity sha512-tQtKA9WIAhBF3+VLAseyMqZeBjW0AHJoxOtYqSUZNJxauErmLbVm2FW1y+J/YA9dUrAC39ITejlZWhVIwawkKw==
@@ -1757,6 +1773,11 @@ Lockfile:
     integrity sha512-NzNVhJDYpwceVVii8/Hu6DKfD2G+NrQHlS/V/qgv763EYudVwEcMQNxd2lh+0VrUByXN/oJkl5grOhYWvQUYiw==
     dependencies:
       extend-shallow "^3.0.0"
+  
+  sqlstring@2.3.1:
+    version "2.3.1"
+    resolved "https://registry.yarnpkg.com/sqlstring/-/sqlstring-2.3.1.tgz#475393ff9e91479aea62dcaf0ca3d14983a7fb40"
+    integrity sha1-R1OT/56RR5rqYtyvDKPRSYOn+0A=
   
   static-extend@^0.1.1:
     version "0.1.2"
