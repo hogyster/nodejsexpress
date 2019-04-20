@@ -11,6 +11,7 @@ app.use(morgan('short'))
 
 app.get('/user_create', (req, res) => {
     console.log("Trying to create new user...")
+    console.log("how do get the form data???")
     res.end()
 })
 app.get("/user/:id", (req, res) => {
