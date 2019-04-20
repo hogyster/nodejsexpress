@@ -13,7 +13,9 @@ app.get("/user/:id", (req, res) => {
         password: 'root',
         database: 'mydb'
     })
-    connection.query("SELECT * FROM users", (err, rows, fields)=> {
+    const userId = req.params.id
+    const queryString = "SELECT * FROM users WHERE id = ?"
+    connection.query(queryString, [userId], (err, rows, fields)=> {
         console.log("I think we fetched users successfully")
         res.json(rows)
     })
